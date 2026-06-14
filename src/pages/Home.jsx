@@ -8,11 +8,15 @@ import CTA from "../components/CTA/CTA";
 import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 import WhatsAppButton from "../components/WhatsAppButton/WhatsAppButton";
+import SEO from "../components/SEO/SEO";
 
 
 function Home() {
   return (
     <>
+
+      <SEO />
+      
       <Navbar />
       <Hero />
       <Services />
