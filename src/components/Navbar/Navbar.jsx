@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import logo from "../../assets/LogoNova.png";
+import logo from "../../assets/LogoNova.webp";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
