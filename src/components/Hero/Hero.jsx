@@ -2,7 +2,7 @@ function Hero() {
   return (
     <section id="inicio"
       data-aos="fade-up"
-      className="relative min-h-screen bg-slate-950 overflow-hidden">
+      className="relative min-h-screen bg-slate-950 flex items-center overflow-hidden pt-32 lg:pt-40">
       <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-transparent to-cyan-500/10"></div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 min-h-screen flex items-center">
@@ -10,10 +10,6 @@ function Hero() {
 
           {/* Contenido */}
           <div className="text-center lg:text-left">
-
-            <span className="inline-flex items-center px-4 py-2 rounded-full bg-blue-600/10 border border-blue-600/20 text-blue-400 mt-38 text-sm font-medium">
-              Transformación Digital Empresarial
-            </span>
 
             <h1 className="mt-8 text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
               Desarrollamos

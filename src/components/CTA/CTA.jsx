@@ -1,6 +1,8 @@
 export default function CTA() {
   return (
-    <section className="py-28 px-6 bg-gradient-to-r from-cyan-600 to-blue-700">
+    <section 
+    data-aos="fade-up"
+    className="py-28 px-6 bg-gradient-to-r from-cyan-600 to-blue-700">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl md:text-6xl font-bold text-white">
           Transforme su empresa con tecnología

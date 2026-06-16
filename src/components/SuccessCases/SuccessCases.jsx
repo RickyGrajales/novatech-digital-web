@@ -1,26 +1,39 @@
-import { FaArrowUp, FaClock, FaDollarSign } from "react-icons/fa";
+import {
+  FaDatabase,
+  FaUsers,
+  FaGlobe,
+} from "react-icons/fa";
 
 const cases = [
   {
-    title: "ERP para Constructora",
-    description:
-      "Centralización de compras, inventario y control de proyectos.",
-    result: "40% reducción de tiempos administrativos",
-    icon: <FaClock />,
+    title: "ERP Empresarial",
+    problem:
+      "Procesos administrativos dispersos y dependencia excesiva de hojas de cálculo.",
+    solution:
+      "Desarrollo de una plataforma ERP centralizada para inventarios, compras y proyectos.",
+    result:
+      "Mayor control operativo y reducción significativa de tareas manuales.",
+    icon: <FaDatabase />,
   },
   {
     title: "CRM Comercial",
-    description:
-      "Automatización del seguimiento de clientes y oportunidades.",
-    result: "35% incremento en conversiones",
-    icon: <FaArrowUp />,
+    problem:
+      "Falta de seguimiento adecuado a clientes potenciales y oportunidades.",
+    solution:
+      "Implementación de un CRM personalizado para gestionar el ciclo comercial.",
+    result:
+      "Mejor organización de ventas y aumento de productividad comercial.",
+    icon: <FaUsers />,
   },
   {
-    title: "Sistema de Inventarios",
-    description:
-      "Control de stock en tiempo real para múltiples sedes.",
-    result: "25% reducción de pérdidas operativas",
-    icon: <FaDollarSign />,
+    title: "Portal Corporativo",
+    problem:
+      "Baja presencia digital y escasa captación de clientes por internet.",
+    solution:
+      "Desarrollo de un portal corporativo optimizado para SEO y conversión.",
+    result:
+      "Mayor visibilidad online y generación constante de oportunidades.",
+    icon: <FaGlobe />,
   },
 ];
 
@@ -28,29 +41,33 @@ export default function SuccessCases() {
   return (
     <section
       id="cases"
-      data-aos="zoom-in"
+      data-aos="fade-up"
       className="bg-slate-950 py-28 px-6"
     >
       <div className="max-w-7xl mx-auto">
+
         <div className="text-center mb-20">
           <span className="text-cyan-400 uppercase tracking-[4px] text-sm font-semibold">
             Casos de Éxito
           </span>
 
           <h2 className="text-4xl md:text-5xl font-bold text-white mt-4">
-            Resultados que generan impacto
+            Soluciones que generan resultados
           </h2>
 
           <p className="text-slate-400 mt-6 max-w-3xl mx-auto">
-            Cada solución desarrollada busca generar eficiencia, crecimiento y
-            ventajas competitivas medibles.
+            Diseñamos software enfocado en optimizar procesos,
+            aumentar productividad y acelerar el crecimiento empresarial.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
+
           {cases.map((item, index) => (
             <div
               key={index}
+              data-aos="fade-up"
+              data-aos-delay={(index + 1) * 100}
               className="
                 bg-slate-900
                 border
@@ -62,30 +79,52 @@ export default function SuccessCases() {
                 duration-500
               "
             >
-              <div className="text-cyan-400 text-3xl mb-6">
+              <div className="text-cyan-400 text-5xl mb-6">
                 {item.icon}
               </div>
 
-              <h3 className="text-white text-2xl font-semibold mb-4">
+              <h3 className="text-white text-2xl font-semibold mb-6">
                 {item.title}
               </h3>
 
-              <p className="text-slate-400 mb-6">
-                {item.description}
-              </p>
+              <div className="space-y-6">
 
-              <div className="border-t border-slate-800 pt-6">
-                <span className="text-cyan-400 font-semibold">
-                  Resultado:
-                </span>
+                <div>
+                  <h4 className="text-red-400 font-semibold mb-2">
+                    Problema
+                  </h4>
 
-                <p className="text-white mt-2">
-                  {item.result}
-                </p>
+                  <p className="text-slate-400">
+                    {item.problem}
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="text-yellow-400 font-semibold mb-2">
+                    Solución
+                  </h4>
+
+                  <p className="text-slate-400">
+                    {item.solution}
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="text-green-400 font-semibold mb-2">
+                    Resultado
+                  </h4>
+
+                  <p className="text-white">
+                    {item.result}
+                  </p>
+                </div>
+
               </div>
             </div>
           ))}
+
         </div>
+
       </div>
     </section>
   );

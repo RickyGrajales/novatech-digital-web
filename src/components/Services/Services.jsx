@@ -1,48 +1,48 @@
 import {
-  FaCode,
-  FaChartLine,
+  FaLaptopCode,
+  FaDatabase,
   FaUsers,
   FaRobot,
-  FaLaptopCode,
-  FaLightbulb,
+  FaGlobe,
+  FaChartLine,
 } from "react-icons/fa";
 
 const services = [
   {
-    icon: <FaCode />,
     title: "Desarrollo de Software",
     description:
-      "Construimos soluciones personalizadas alineadas con los procesos y objetivos de su organización.",
+      "Creamos soluciones personalizadas adaptadas a los procesos y necesidades de cada empresa.",
+    icon: <FaLaptopCode />,
   },
   {
-    icon: <FaChartLine />,
-    title: "ERP Empresarial",
+    title: "Sistemas ERP",
     description:
-      "Centralice operaciones, optimice recursos y obtenga control total sobre su empresa.",
+      "Centraliza la gestión de inventarios, compras, ventas, finanzas y operaciones empresariales.",
+    icon: <FaDatabase />,
   },
   {
+    title: "Sistemas CRM",
+    description:
+      "Administra clientes, oportunidades de negocio y procesos comerciales desde una sola plataforma.",
     icon: <FaUsers />,
-    title: "CRM Empresarial",
-    description:
-      "Gestione clientes, oportunidades comerciales y aumente sus conversiones.",
   },
   {
-    icon: <FaRobot />,
     title: "Automatización de Procesos",
     description:
-      "Elimine tareas repetitivas y aumente la eficiencia operativa mediante tecnología.",
+      "Reducimos tareas repetitivas mediante flujos automáticos que aumentan la productividad.",
+    icon: <FaRobot />,
   },
   {
-    icon: <FaLaptopCode />,
     title: "Aplicaciones Web",
     description:
-      "Desarrollamos plataformas modernas, seguras y escalables para cualquier industria.",
+      "Desarrollamos plataformas modernas, seguras y escalables accesibles desde cualquier dispositivo.",
+    icon: <FaGlobe />,
   },
   {
-    icon: <FaLightbulb />,
     title: "Consultoría Tecnológica",
     description:
-      "Acompañamos la transformación digital de su organización con visión estratégica.",
+      "Acompañamos a las empresas en su transformación digital mediante estrategias tecnológicas.",
+    icon: <FaChartLine />,
   },
 ];
 
@@ -51,62 +51,59 @@ export default function Services() {
     <section
       id="services"
       data-aos="fade-up"
-      className="relative bg-slate-950 py-28 px-6 overflow-hidden"
+      className="bg-slate-950 py-28 px-6"
     >
       <div className="max-w-7xl mx-auto">
+        {/* Encabezado */}
         <div className="text-center mb-20">
           <span className="text-cyan-400 uppercase tracking-[4px] text-sm font-semibold">
-            Soluciones Empresariales
+            Nuestros Servicios
           </span>
 
           <h2 className="text-4xl md:text-5xl font-bold text-white mt-4">
-            Tecnología diseñada para impulsar
-            <span className="text-cyan-400"> resultados reales</span>
+            Soluciones Tecnológicas para Empresas
           </h2>
 
-          <p className="text-slate-400 mt-6 max-w-3xl mx-auto text-lg">
-            Ayudamos a organizaciones a optimizar procesos, reducir costos y
-            acelerar su crecimiento mediante soluciones tecnológicas
-            personalizadas.
+          <p className="text-slate-400 mt-6 max-w-3xl mx-auto">
+            Diseñamos e implementamos software empresarial que optimiza
+            procesos, mejora la productividad y acelera el crecimiento de las
+            organizaciones.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {/* Cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
+              data-aos="zoom-in"
+              data-aos-delay={(index + 1) * 100}
               className="
-                group
-                bg-slate-900/70
-                backdrop-blur-md
-                border border-slate-800
-                rounded-2xl
+                bg-slate-900
+                border
+                border-slate-800
+                rounded-3xl
                 p-8
+                hover:border-cyan-500
+                hover:-translate-y-2
                 transition-all
                 duration-500
-                hover:-translate-y-3
-                hover:border-cyan-500
-                hover:shadow-[0_0_35px_rgba(6,182,212,0.25)]
+                group
               "
             >
               <div
                 className="
-                  w-16 h-16
-                  rounded-xl
-                  flex items-center justify-center
-                  bg-cyan-500/10
                   text-cyan-400
-                  text-3xl
+                  text-5xl
                   mb-6
-                  transition-all
-                  duration-500
                   group-hover:scale-110
+                  transition
                 "
               >
                 {service.icon}
               </div>
 
-              <h3 className="text-white text-xl font-semibold mb-4">
+              <h3 className="text-white text-2xl font-semibold mb-4">
                 {service.title}
               </h3>
 

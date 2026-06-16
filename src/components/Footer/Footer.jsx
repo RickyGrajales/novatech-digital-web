@@ -7,7 +7,9 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-black border-t border-slate-800">
+    <footer
+     data-aos="fade-up"
+    className="bg-black border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-6 py-16">
 
         <div className="grid md:grid-cols-4 gap-12">
