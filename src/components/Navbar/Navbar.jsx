@@ -16,26 +16,44 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+
+    if (!section) return;
+
+    const y =
+      section.getBoundingClientRect().top +
+      window.pageYOffset -
+      120;
+
+    window.scrollTo({
+      top: y,
+      behavior: "smooth",
+    });
+
+    setIsOpen(false);
+  };
+
   const menuItems = [
     {
       name: "Inicio",
-      href: "#inicio",
+      id: "inicio",
     },
     {
       name: "Servicios",
-      href: "#services",
+      id: "services",
     },
     {
       name: "Tecnologías",
-      href: "#technologies",
+      id: "technologies",
     },
     {
       name: "Casos de Éxito",
-      href: "#cases",
+      id: "cases",
     },
     {
       name: "Contacto",
-      href: "#contact",
+      id: "contact",
     },
   ];
 
@@ -48,20 +66,20 @@ function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-36">
+        <div className="flex items-center justify-between h-24 lg:h-28">
 
           {/* Logo */}
-          <a
-            href="#inicio"
+          <button
+            onClick={() => scrollToSection("inicio")}
             className="flex items-center"
           >
             <img
               src={logo}
               alt="NovaTech Digital"
               className="
-                h-32
-                md:h-32
-                lg:-36
+                h-20
+                md:h-24
+                lg:h-28
                 w-auto
                 object-contain
                 transition-all
@@ -70,15 +88,14 @@ function Navbar() {
                 drop-shadow-[0_0_15px_rgba(59,130,246,0.35)]
               "
             />
-          </a>
+          </button>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-
             {menuItems.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
+                onClick={() => scrollToSection(item.id)}
                 className="
                   text-slate-300
                   hover:text-cyan-400
@@ -88,10 +105,11 @@ function Navbar() {
                 "
               >
                 {item.name}
-              </a>
+              </button>
             ))}
 
             <button
+              onClick={() => scrollToSection("contact")}
               className="
                 bg-blue-600
                 hover:bg-blue-700
@@ -108,21 +126,24 @@ function Navbar() {
             >
               Solicitar Cotización
             </button>
-
           </div>
 
           {/* Mobile Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white text-2xl"
+            className="
+              md:hidden
+              text-cyan-400
+              text-3xl
+              relative
+              z-50
+            "
           >
             {isOpen ? <FaTimes /> : <FaBars />}
           </button>
-
         </div>
 
         {/* Mobile Menu */}
-
         {isOpen && (
           <div
             className="
@@ -133,26 +154,27 @@ function Navbar() {
               rounded-2xl
               p-5
               mb-5
+              shadow-xl
             "
           >
             <div className="flex flex-col gap-4">
-
               {menuItems.map((item) => (
-                <a
+                <button
                   key={item.name}
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => scrollToSection(item.id)}
                   className="
+                    text-left
                     text-slate-300
                     hover:text-cyan-400
                     transition
                   "
                 >
                   {item.name}
-                </a>
+                </button>
               ))}
 
               <button
+                onClick={() => scrollToSection("contact")}
                 className="
                   mt-4
                   bg-blue-600
@@ -165,7 +187,6 @@ function Navbar() {
               >
                 Solicitar Cotización
               </button>
-
             </div>
           </div>
         )}

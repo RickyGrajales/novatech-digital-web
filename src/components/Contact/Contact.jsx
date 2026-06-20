@@ -289,7 +289,7 @@ export default function Contact() {
 
         <div className="grid md:grid-cols-3 gap-6 mt-10">
           <a
-            href="https://wa.me/573160976523"
+            href="https://wa.me/573160976523?text=Hola%20Novatech%20Digital,%20me%20interesa%20solicitar%20una%20cotización."
             target="_blank"
             rel="noreferrer"
             className="

@@ -14,20 +14,29 @@ export default function CTA() {
         </p>
 
         <button
-          className="
-            mt-10
-            bg-white
-            text-slate-900
-            px-8
-            py-4
-            rounded-xl
-            font-semibold
-            hover:scale-105
-            transition
-          "
-        >
-          Solicitar Diagnóstico Gratuito
-        </button>
+  onClick={() => {
+    document
+      .getElementById("contact")
+      ?.scrollIntoView({
+        behavior: "smooth",
+      });
+  }}
+  className="
+    bg-blue-600
+    hover:bg-blue-700
+    text-white
+    px-6
+    py-3
+    rounded-xl
+    font-semibold
+    transition-all
+    duration-300
+    hover:scale-105
+    shadow-lg
+  "
+>
+  Solicitar Diagnóstico
+</button>
       </div>
     </section>
   );

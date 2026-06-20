@@ -25,12 +25,29 @@ function Hero() {
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
 
-              <button className="px-8 py-4 bg-blue-600 hover:bg-blue-700 transition rounded-xl text-white font-semibold shadow-lg">
+              <button
+                onClick={() => {
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({
+                      behavior: "smooth",
+                    });
+                }}
+                className="
+    bg-blue-600
+    hover:bg-blue-700
+    text-white
+    px-6
+    py-3
+    rounded-xl
+    font-semibold
+    transition-all
+    duration-300
+    hover:scale-105
+    shadow-lg
+  "
+              >
                 Solicitar Cotización
-              </button>
-
-              <button className="px-8 py-4 border border-slate-700 hover:border-blue-500 transition rounded-xl text-white font-semibold">
-                Ver Servicios
               </button>
 
             </div>
