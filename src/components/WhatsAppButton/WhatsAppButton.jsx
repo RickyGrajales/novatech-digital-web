@@ -1,7 +1,7 @@
 import { FaWhatsapp } from "react-icons/fa";
 
 function WhatsAppButton() {
-  const phone = "573160976523";
+  const phone = "573171753777";
 
   const message =
     "Hola, estoy interesado en los servicios de desarrollo de software de NovaTech Digital.";

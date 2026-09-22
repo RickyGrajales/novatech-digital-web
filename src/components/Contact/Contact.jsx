@@ -289,7 +289,7 @@ export default function Contact() {
 
         <div className="grid md:grid-cols-3 gap-6 mt-10">
           <a
-            href="https://wa.me/573160976523?text=Hola%20Novatech%20Digital,%20me%20interesa%20solicitar%20una%20cotización."
+            href="https://wa.me/573171753777?text=Hola%20Novatech%20Digital,%20me%20interesa%20solicitar%20una%20cotización."
             target="_blank"
             rel="noreferrer"
             className="
@@ -311,7 +311,9 @@ export default function Contact() {
           </a>
 
           <a
-            href="mailto:novatechdigital.dev@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=novatechdigital.dev@gmail.com&su=Solicitud%20de%20Cotización"
+            target="_blank"
+            rel="noopener noreferrer"
             className="
               bg-slate-900
               border
@@ -325,13 +327,17 @@ export default function Contact() {
           >
             <FaEnvelope className="mx-auto text-cyan-400 text-3xl mb-4" />
 
+            <p className="text-white font-medium">
+              Correo Electrónico
+            </p>
+
             <p className="text-white break-all">
               novatechdigital.dev@gmail.com
             </p>
           </a>
 
           <a
-            href="tel:+573160976523"
+            href="tel:+573171753777"
             className="
               bg-slate-900
               border
@@ -345,8 +351,12 @@ export default function Contact() {
           >
             <FaPhone className="mx-auto text-cyan-400 text-3xl mb-4" />
 
+            <p className="text-white font-medium">
+              Teléfono
+            </p>
+
             <p className="text-white">
-              +57 316 097 6523
+              +57 317 1753777
             </p>
           </a>
         </div>

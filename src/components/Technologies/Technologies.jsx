@@ -29,10 +29,11 @@ export default function Technologies() {
   return (
     <section
       id="technologies"
-      data-aos="fade-right"
+      data-aos="fade-down"
       className="bg-slate-900 py-28 px-6"
     >
       <div className="max-w-7xl mx-auto">
+
         <div className="text-center mb-20">
           <span className="text-cyan-400 uppercase tracking-[4px] text-sm font-semibold">
             Tecnologías
@@ -44,31 +45,81 @@ export default function Technologies() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+
           {technologies.map((tech, index) => (
             <div
               key={index}
               className="
+                group
+                relative
+                overflow-hidden
                 bg-slate-950
                 border
                 border-slate-800
                 rounded-2xl
                 p-8
                 text-center
-                hover:border-cyan-500
                 transition-all
-                duration-500
+                duration-300
+                hover:-translate-y-2
+                hover:border-cyan-500
+                hover:shadow-[0_0_25px_rgba(34,211,238,0.15)]
               "
             >
-              <div className="text-5xl text-cyan-400 flex justify-center mb-4">
+              {/* Glow */}
+              <div
+                className="
+                  absolute
+                  inset-0
+                  opacity-0
+                  group-hover:opacity-100
+                  transition-all
+                  duration-300
+                  bg-gradient-to-br
+                  from-cyan-500/5
+                  via-transparent
+                  to-blue-500/5
+                "
+              />
+
+              {/* Icono */}
+              <div
+                className="
+                  relative
+                  flex
+                  justify-center
+                  mb-4
+                  text-5xl
+                  text-cyan-400
+                  transition-all
+                  duration-300
+                  group-hover:scale-110
+                  group-hover:text-cyan-300
+                  group-hover:drop-shadow-[0_0_12px_rgba(34,211,238,0.8)]
+                "
+              >
                 {tech.icon}
               </div>
 
-              <h3 className="text-white font-medium">
+              {/* Nombre */}
+              <h3
+                className="
+                  relative
+                  text-white
+                  font-medium
+                  transition-colors
+                  duration-300
+                  group-hover:text-cyan-300
+                "
+              >
                 {tech.name}
               </h3>
+
             </div>
           ))}
+
         </div>
+
       </div>
     </section>
   );
